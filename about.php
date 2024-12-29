@@ -131,6 +131,9 @@
     <div class="d-flex justify-content-center">
         <img src="./imagine/imageUML.png" alt="Arhitectura bazei de date" class="img-fluid">
     </div>
+    <div class="text-center mt-5">
+            <a href="./login/login.php" class="btn btn-primary btn-lg">Autentificare</a>
+    </div>
 </section>
 
 
