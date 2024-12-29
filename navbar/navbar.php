@@ -63,7 +63,7 @@ $idRole = $_SESSION['idRole'];
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../students/student-courses.php">My Courses</a>
-                        </li>
+                        </li>           
                         <li class="nav-item">
                             <a class="nav-link" href="../students/attend-courses.php">Attend Courses</a>
                         </li>
