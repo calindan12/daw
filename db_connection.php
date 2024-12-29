@@ -1,15 +1,12 @@
-<?php
-// Detalii conexiune
-$servername = "localhost";
-$username = "root"; // Schimbă cu utilizatorul MySQL
-$password = ""; // Schimbă cu parola MySQL
-$dbname = "proiect";
+$server = 'kcpgm0ka8vudfq76.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
+$username = 'faar5mqcqyixyakm';
+$password = 'rmogf75j27wz9ssf';
+$database = 'ubq5am3b39gc5oal';
+$port = 3306;
 
-// Creare conexiune
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($server, $username, $password, $database, $port);
 
-// Verificare conexiune
 if ($conn->connect_error) {
-    die("Conexiunea la baza de date a eșuat: " . $conn->connect_error);
+    die("Conexiunea a eșuat: " . $conn->connect_error);
 }
-?>
+echo "Conexiune reușită!";
