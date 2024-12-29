@@ -1,6 +1,6 @@
 <?php
 require_once '../db_connection.php';
-require_once 'D:/xampp2/htdocs/proiect/vendor/autoload.php';
+require_once '../vendor/autoload.php';
 require_once '../helper/db_helper.php';
 
 
