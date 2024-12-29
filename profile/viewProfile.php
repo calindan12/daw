@@ -1,8 +1,10 @@
 <?php
 
 require_once '../db_connection.php';
+require_once '../analytics/analytics.php';
 
-echo("am intrat");
+
+echo("am intrat1");
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -12,6 +14,9 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
     exit;
 }
+
+echo("am intrat2");
+
 
 // Include fișierul de conexiune la baza de date
 
@@ -26,6 +31,10 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+
+echo("am intrat3");
+
+
 $user = [];
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
@@ -33,16 +42,13 @@ if ($result->num_rows === 1) {
     die("Utilizatorul nu a fost găsit sau există o problemă cu baza de date.");
 }
 
+echo("am intrat4");
+
+
 $stmt->close();
 $conn->close();
 ?>
 
-
-
-
-<?php
-require_once '../analytics/analytics.php';
-?>
 
 <!DOCTYPE html>
 <html lang="ro">
