@@ -1,5 +1,5 @@
 <?php
 // Redirecționează către pagina de login
-header("Location: ./login/login.php");
+header("Location: ./register/register.php");
 exit;
 ?>
