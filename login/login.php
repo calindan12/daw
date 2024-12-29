@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
     // Validare reCAPTCHA
-    $secretKey = '6Ld-Q6QqAAAAAEMy6KmZjeU5w4pJEXeX0xv5N_Qo'; // Înlocuiește cu cheia secretă reCAPTCHA
+    $secretKey = '6Lcy9qgqAAAAAF9YE1Yey67QU69Y_vHzGTEtO-yH'; // Înlocuiește cu cheia secretă reCAPTCHA
     $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
     $response = file_get_contents("$recaptchaUrl?secret=$secretKey&response=$recaptchaResponse");
     $responseKeys = json_decode($response, true);
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="password" class="form-label">Parolă:</label>
                                 <input type="password" id="password" name="password" class="form-control" required>
                             </div>
-                            <div class="g-recaptcha" data-sitekey="6Ld-Q6QqAAAAAOF5zIa0mfEWsLNLgqv5-8VAhpWA"></div>
+                            <div class="g-recaptcha" data-sitekey="6Lcy9qgqAAAAAKZMiIaV0v2DVGnAoD0cI6ZmCQQc"></div>
                             <button type="submit" class="btn btn-primary w-100">Autentifică-te</button>
                             <div class="text-center mt-3">
                                 <p>Nu ai cont? <a href="../register/register.php" class="btn btn-link">Înregistrează-te</a></p>
