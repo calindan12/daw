@@ -3,6 +3,8 @@
 
 require_once '../helper/db_helper.php';
 
+require_once '../analytics/analytics.php';
+
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -119,12 +121,6 @@ $conn->close();
 ?>
 
 
-
-
-
-<?php
-require_once '../analytics/analytics.php';
-?>
 
 <!DOCTYPE html>
 <html lang="ro">
