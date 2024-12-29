@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
 echo("am intrat2");
 
 
