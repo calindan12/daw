@@ -1,5 +1,9 @@
 <?php
 
+require_once '../db_connection.php';
+
+echo("am intrat");
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -10,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Include fișierul de conexiune la baza de date
-require_once '../db_connection.php';
+
 
 // Preia ID-ul utilizatorului din sesiune
 $user_id = $_SESSION['user_id'];
