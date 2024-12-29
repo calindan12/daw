@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['user_id'])) {
     // Redirecționare dacă utilizatorul nu este autentificat
-    header("Location: login_form.php");
+    header("Location: ../login/login.php");
     exit;
 }
 
