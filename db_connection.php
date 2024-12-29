@@ -1,3 +1,5 @@
+<?php
+
 $server = 'kcpgm0ka8vudfq76.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
 $username = 'faar5mqcqyixyakm';
 $password = 'rmogf75j27wz9ssf';
@@ -10,3 +12,5 @@ if ($conn->connect_error) {
     die("Conexiunea a eșuat: " . $conn->connect_error);
 }
 echo "Conexiune reușită!";
+
+?>
