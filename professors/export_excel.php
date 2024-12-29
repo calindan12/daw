@@ -5,6 +5,9 @@ require_once '../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
+ob_start();
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -58,6 +61,5 @@ header('Cache-Control: max-age=0');
 // Generează și descarcă fișierul Excel
 $writer = new Xlsx($spreadsheet);
 $writer->save('php://output');
+ob_end_flush();
 exit;
-
-?>
