@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     // Validare simplă
-    if (empty($nume) || empty($prenume) || empty($nume_facultate) || empty($username) ||empty($email)) {
+    if (empty($nume) || empty($prenume) || empty($username) ||empty($email)) {
         $message = "Toate câmpurile sunt obligatorii.";
     }else {
 
