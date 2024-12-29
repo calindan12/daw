@@ -1,6 +1,8 @@
 <?php
-session_start();
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Verifică dacă utilizatorul este autentificat
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
