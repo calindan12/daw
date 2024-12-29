@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "google/cloud-recaptcha-enterprise": "^1.17",
+        "phpoffice/phpspreadsheet": "^3.7"
+    }
+}
