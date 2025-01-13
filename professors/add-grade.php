@@ -2,6 +2,9 @@
 
 require_once '../helper/db_helper.php';
 
+// require_once '../security/auth.php';
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
