@@ -27,7 +27,7 @@ require_once '../analytics/analytics.php';
             exit;
         }
 
-        if ($_SESSION['idRole'] !== 1) {
+        if ($_SESSION['idRole'] !== 2) {
             header("Location: access_denied.php");
             exit;
         }

@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-if ($_SESSION['idRole'] !== 1) {
+if ($_SESSION['idRole'] !== 2) {
     header("Location: access_denied.php");
     exit;
 }
