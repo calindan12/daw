@@ -15,7 +15,7 @@ $query = "INSERT INTO analytics (ip_address, user_agent, page_url, visit_time) V
 $params = [$user_ip, $user_agent, $page_url, $visit_time];
 
 if (db_execute($query, $params)) {
-    echo "Vizita a fost înregistrată.";
+    // echo "Vizita a fost înregistrată.";
 } else {
     echo "Eroare la înregistrarea vizitei.";
 }
