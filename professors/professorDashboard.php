@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Verifică rolul utilizatorului (exemplu pentru admini)
-if ($_SESSION['user_role'] !== 'professor') {
+if ($_SESSION['idRole'] !== 1) {
     header("Location: access_denied.php");
     exit;
 }
