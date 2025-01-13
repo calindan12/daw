@@ -2,6 +2,17 @@
 require_once '../helper/db_helper.php';
 session_start(); 
 
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login/login.php");
+    exit;
+}
+
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Mesajele de eroare și succes
 $message = $_SESSION['error_message'] ?? '';
 $success_message = $_SESSION['success_message'] ?? '';

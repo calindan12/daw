@@ -7,7 +7,12 @@ session_start();
 
 // Verifică dacă utilizatorul este autentificat
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login/login.php");
+    exit;
+}
+
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
     exit;
 }
 

@@ -12,6 +12,11 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+if ($_SESSION['idRole'] !== 1) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Verifică dacă ID-ul cursului a fost trimis prin GET
 if (!isset($_GET['id'])) {
     die("ID-ul cursului nu a fost specificat.");

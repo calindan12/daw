@@ -7,6 +7,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
+if ($_SESSION['idRole'] !== 1) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Inițializează cURL
 // $url = "https://unibuc.ro/studii/facultati/";
 // $ch = curl_init();

@@ -13,6 +13,11 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+if ($_SESSION['idRole'] !== 1) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Include fișierul de conexiune la baza de date
 require_once '../db_connection.php';
 

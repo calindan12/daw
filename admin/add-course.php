@@ -3,8 +3,13 @@ require_once '../helper/db_helper.php';
 session_start();
 
 // Verifică dacă utilizatorul este autentificat și este admin
-if (!isset($_SESSION['user_id']) || $_SESSION['idRole'] != 3) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
+    exit;
+}
+
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
     exit;
 }
 

@@ -8,6 +8,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
+if ($_SESSION['idRole'] !== 2) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Verifică dacă este o cerere POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['user_id'];

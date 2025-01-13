@@ -8,6 +8,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
+if ($_SESSION['idRole'] !== 2) {
+    header("Location: access_denied.php");
+    exit;
+}
+
 // Obține ID-ul utilizatorului curent
 $user_id = $_SESSION['user_id'];
 

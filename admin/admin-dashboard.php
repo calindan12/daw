@@ -2,8 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    // Redirecționare dacă utilizatorul nu este autentificat
-    header("Location: login_form.php");
+    header("Location: ../login/login.php");
+    exit;
+}
+
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
     exit;
 }
 

@@ -3,11 +3,15 @@ require_once '../helper/db_helper.php';
 session_start();
 
 // Verifică dacă utilizatorul este autentificat
-if (!isset($_SESSION['user_id']) || $_SESSION['idRole'] != 3) { // Verifică dacă utilizatorul este admin
+if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
     exit;
 }
 
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
+    exit;
+}
 // Obține utilizatorii (exceptând adminii)
 $query = "SELECT c.id, c.name, c.credits, c.id_professor, u.nume , u.prenume, u.id AS role FROM courses c LEFT JOIN users u ON u.id = c.id_professor
     ORDER BY c.name ";
