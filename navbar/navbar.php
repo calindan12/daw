@@ -55,7 +55,7 @@ $idRole = $_SESSION['idRole'];
                             <a class="nav-link" href="../admin/manage-courses.php">Manage Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../admin/analytics/view_analytics.php">View Analitics</a>
+                            <a class="nav-link" href="../analytics/view_analytics.php">View Analitics</a>
                         </li>
                     <?php elseif ($idRole == 2): // Student ?>
                         <li class="nav-item">

@@ -3,15 +3,15 @@ require_once '../db_connection.php';
 require_once '../helper/db_helper.php';
 
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login/login.php");
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: ../login/login.php");
+//     exit;
+// }
 
-if ($_SESSION['idRole'] !== 3) {
-    header("Location: access_denied.php");
-    exit;
-}
+// if ($_SESSION['idRole'] !== 3) {
+//     header("Location: access_denied.php");
+//     exit;
+// }
 
 
 // Selectează datele din tabelul analytics
