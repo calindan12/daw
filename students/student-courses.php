@@ -35,7 +35,6 @@ require_once '../analytics/analytics.php';
         // Obține ID-ul utilizatorului curent
         $user_id = $_SESSION['user_id'];
 
-        // Interogare pentru a obține cursurile înscrise de utilizator
         $query = "
             SELECT c.id AS course_id, c.name AS course_name, c.credits, e.enrolled_at, e.grade as grade, e.grade_date
             FROM enrollments e

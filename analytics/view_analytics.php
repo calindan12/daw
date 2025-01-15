@@ -3,6 +3,17 @@ require_once '../db_connection.php';
 require_once '../helper/db_helper.php';
 
 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login/login.php");
+    exit;
+}
+
+if ($_SESSION['idRole'] !== 3) {
+    header("Location: access_denied.php");
+    exit;
+}
+
+
 // Selectează datele din tabelul analytics
 $query1 = "SELECT ip_address, user_agent, page_url, visit_time FROM analytics ORDER BY visit_time DESC";
 $data1 = db_select($query1);
@@ -12,7 +23,6 @@ $data1 = db_select($query1);
 $query2 = "SELECT page_url, COUNT(*) as visits FROM analytics GROUP BY page_url ORDER BY visits DESC";
 $data2 = db_select($query2);
 
-// Format pentru JavaScript
 $pages = [];
 $visits = [];
 foreach ($data2 as $row) {
@@ -20,7 +30,6 @@ foreach ($data2 as $row) {
     $visits[] = $row['visits'];
 }
 
-// Convertim datele în JSON pentru utilizare în JavaScript
 $pages_json = json_encode($pages);
 $visits_json = json_encode($visits);
 ?>
