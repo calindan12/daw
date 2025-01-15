@@ -26,14 +26,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!is_numeric($credits)) {
         $message = "Numărul de credite trebuie să fie numeric!";
     } else {
-        // Query pentru inserare în baza de date
-        $query = "INSERT INTO courses (name, credits, id_professor) VALUES (?, ?, ?)";
-        $params = [$course_name, $credits, $professor_id];
+        // Verifică dacă cursul există deja
+        $check_query = "SELECT COUNT(*) as count FROM courses WHERE name = ?";
+        $check_params = [$course_name];
+        $result = db_select($check_query, $check_params);
 
-        if (db_execute($query, $params)) {
-            $message = "Cursul a fost adăugat cu succes!";
+        if ($result[0]['count'] > 0) {
+            $message = "Cursul cu acest nume există deja!";
         } else {
-            $message = "A apărut o eroare la adăugarea cursului.";
+            // Query pentru inserare în baza de date
+            $query = "INSERT INTO courses (name, credits, id_professor) VALUES (?, ?, ?)";
+            $params = [$course_name, $credits, $professor_id];
+
+            if (db_execute($query, $params)) {
+                $message = "Cursul a fost adăugat cu succes!";
+            } else {
+                $message = "A apărut o eroare la adăugarea cursului.";
+            }
         }
     }
 }
